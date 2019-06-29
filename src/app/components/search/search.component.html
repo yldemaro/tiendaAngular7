@@ -1,0 +1,25 @@
+<div class="container-full bg-dark">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 text-center p-3">
+      <input type="text" class="buscador" name="filterProd" placeholder="Buscar Producto" [(ngModel)]="filterProd">
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 p-3" *ngFor="let item of productos.productos | filter:filterProd">
+      <div class="card" (click)="detailProd(item)">
+        <div *ngIf="item.oferta==true" class="oferta text-center">
+          <h3 class="tituOferta">Oferta</h3>
+        </div>
+        <img class="card-img-top" src="assets/img/productos/{{item.img}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{item.nombre}}</h5>
+          <p class="card-text" *ngIf="item.oferta==true">Antes: {{item.precio.antes}}$ Despues:
+            {{item.precio.despues}}$</p>
+          <p class="card-text" *ngIf="item.oferta==false">{{item.precio}}$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

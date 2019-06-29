@@ -1,0 +1,73 @@
+<div class="container-full">
+  <div class="row">
+    <div class="centrar col-12 col-md-1 p-3" style="display:inline-block;">
+      <div *ngFor="let item of productos.otherfotos">
+        <img width="100%" src="{{item.image}}" alt="">
+      </div>
+    </div>
+    <div class="centrar col-12 col-md-6 p-3">
+      <img width="200px" height="200px" src="assets/img/productos/{{productos.img}}" alt="">
+    </div>
+    <div class="col-12 col-md-3 p-3">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>{{productos.nombre}}</h3>
+        </div>
+        <div class="col-md-12">
+          <h3>Descripción</h3>
+          <p>{{productos.descripcion}}</p>
+        </div>
+        <div class="col-md-12">
+          <p class="precio" *ngIf="productos.oferta==true">Antes: {{productos.precio.antes}}$ Despues:
+            {{productos.precio.despues}}$</p>
+          <p class="precio" *ngIf="productos.oferta==false">Precio: {{productos.precio}}$</p>
+        </div>
+        <div class="col-md-12">
+          <h3>Categoria</h3>
+          <p>{{productos.categoria}}</p>
+        </div>
+
+        <div class="col-12 col-md-3 text-center my-2" *ngFor="let item of productos.capacidad">
+          <div *ngIf="productos.capacidad.length > 0">
+            <div style="border:1px solid orange;">
+              {{item.cap}}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12" *ngIf="productos.caracteristicas">
+          <h3>Caracteristicas</h3>
+          <p>{{productos.caracteristicas}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="centrar col-12 col-md-2 p-3">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="precio" *ngIf="productos.oferta==true">Antes: {{productos.precio.antes}}$ Despues:
+            {{productos.precio.despues}}$</p>
+          <p class="precio" *ngIf="productos.oferta==false">{{productos.precio}}$</p>
+
+          <p class="card-text" *ngIf="productos.oferta==true">+ {{productos.precio.despues + 10}}$ Deposito para
+            Venezuela </p>
+          <p class="card-text" *ngIf="productos.oferta==false">+ {{productos.precio + 10}}$ Deposito para Venezuela </p>
+
+          <p class="card-text">
+            Este producto llegara el martes
+          </p>
+          <p class="card-text" style="color:darkgreen">
+            In Stock
+          </p>
+        </div>
+        <div class="col-md-12">
+          <button class="btn btn-warning"> <i class="fas fa-shopping-cart"></i> Agregar al Carro</button>
+        </div>
+        <div class="col-md-12 my-2">
+          <button class="btn btn-warning"> <i class="far fa-play-circle"></i> Comprar Ahora</button>
+        </div>
+        <div class="col-md-12 my-2">
+          <button class="btn btn-outline-dark"> Agregar a la Lista</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

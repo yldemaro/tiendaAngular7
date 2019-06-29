@@ -1,0 +1,75 @@
+.contenedor{
+    background: #abbaab;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.card{
+    height: 250px;
+}
+.card-text{
+    font-size: 16px;
+    color:rgb(177, 55, 55);
+}
+
+.oferta{
+    width:100%; 
+    background: #b3b32e;
+    height: 20px;
+    text-shadow: 0 0 30px #fff;
+    box-shadow: 0 0 20px #4f9;
+}
+.tituOferta{
+    color:white !important;
+    font-weight: bold;
+    font-size: 15px
+}
+
+.card-img-top{
+    margin: auto;
+    width: 80px !important;
+    height: 80px !important;
+}
+
+.blog .carousel-indicators {
+	left: 0;
+	top: auto;
+    bottom: -40px;
+
+}
+
+/* The colour of the indicators */
+.blog .carousel-indicators li {
+    background: #a3a3a3;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+}
+
+.blog .carousel-indicators .active {
+background: #707070;
+}
+
+.buscador{
+    width: 70%; border-radius:10px;border:1px solid white; height:40px;
+    padding-left: 20px;
+    border-right: none;
+}
+.cont{
+   background: #b3b32e;
+   position:absolute;
+   border:1px solid white;
+    border-radius: 0px 10px 10px 0px;
+    border-left: none;
+    padding: 5px;
+    height: 40px;
+}
+
+.cont:hover{
+    background: transparent;
+    cursor: pointer;
+}
+
+.fas{
+    font-size:25px;
+}

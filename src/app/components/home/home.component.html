@@ -1,0 +1,129 @@
+<div class="container-full bg-dark">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 text-center p-3">
+      <input type="text" class="buscador" name="filterProd" placeholder="Buscar Producto" [(ngModel)]="filterProd">
+    </div>
+  </div>
+</div>
+<div class="contenedor">
+
+  <div id="demo" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img width="100%" height="300px" src="assets/img/slide1.png" alt="Los Angeles">
+      </div>
+      <div class="carousel-item">
+        <img width="100%" height="300px" src="assets/img/slide2.jpg" alt="Los Angeles">
+      </div>
+      <div class="carousel-item">
+        <img width="100%" height="300px" src="assets/img/slide3.jpg" alt="Los Angeles">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 p-2">
+        <h2>Productos Recientes</h2>
+      </div>
+      <div class="col-md-3 p-3" *ngFor="let item of productos.productos | filter:filterProd">
+        <div class="card" (click)="detailProd(item)">
+          <div *ngIf="item.oferta==true" class="oferta text-center">
+            <h3 class="tituOferta">Oferta</h3>
+          </div>
+          <img class="card-img-top" src="assets/img/productos/{{item.img}}"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{item.nombre}}</h5>
+            <p class="card-text" *ngIf="item.oferta==true">Antes: {{item.precio.antes}}$ Despues:
+              {{item.precio.despues}}$</p>
+            <p class="card-text" *ngIf="item.oferta==false">{{item.precio}}$</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container bg-light">
+    <div class="row blog">
+      <div class="col-md-12 my-3">
+
+        <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+
+          <ol class="carousel-indicators">
+            <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#blogCarousel" data-slide-to="1"></li>
+          </ol>
+
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h3>Productos Mas Vendidos </h3>
+              <div class="row">
+                <div class="col-md-3 text-center" *ngFor="let item of productos.productos">
+                  <div class="card" (click)="detailProd(item)">
+                    <a href="#">
+                      <img width="100px" height="100px" src="assets/img/productos/{{item.img}}" alt="Image">
+                    </a>
+                    <h3 class="card-title">{{item.nombre}}</h3>
+                    <p class="card-text" *ngIf="item.oferta==true">Antes: {{item.precio.antes}}$ Despues:
+                      {{item.precio.despues}}$</p>
+                    <p class="card-text" *ngIf="item.oferta==false">{{item.precio}}$</p>
+                  </div>
+
+                </div>
+              </div>
+              <!--.row-->
+            </div>
+            <!--.item-->
+
+            <div class="carousel-item">
+              <h3>Productos Mas Buscados </h3>
+              <div class="row">
+                <div class="col-md-3 text-center" *ngFor="let item of productos.productos">
+                  <div class="card" (click)="detailProd(item)">
+                    <a href="#">
+                      <img width="100px" height="100px" src="assets/img/productos/{{item.img}}" alt="Image">
+                    </a>
+                    <h3 class="card-title">{{item.nombre}}</h3>
+                    <p class="card-text" *ngIf="item.oferta==true ">Antes: {{item.precio.antes}}$ Despues:
+                      {{item.precio.despues}}$</p>
+                    <p class="card-text" *ngIf="item.oferta==false">{{item.precio}}$</p>
+                  </div>
+
+                </div>
+              </div>
+              <!--.row-->
+            </div>
+            <!--.item-->
+
+          </div>
+          <!--.carousel-inner-->
+        </div>
+        <!--.Carousel-->
+
+      </div>
+    </div>
+  </div>
+
+  
+</div>
